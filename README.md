@@ -22,20 +22,9 @@ Este laboratorio sienta la base frontend limpia y desacoplada antes de conectars
 
 ## 🏗️ 2. Arquitectura de la Solución
 
-El diagrama de arquitectura fue modelado en **Draw.io** y está disponible en [`diagramas/arquitectura-lab09a.drawio`](diagramas/arquitectura-lab09a.drawio).
-
-```
-Navegador Web (SPA :4200)
-    │
-    ▼
-Angular Router (app.routes.ts)
-    ├── /productos ───────────────► CatalogoComponent (Signals + Standalone)
-    ├── /productos/nuevo ─────────► ProductoFormComponent (Reactive Forms)
-    └── /productos/editar/:id ────► ProductoFormComponent (Reactive Forms)
-                                           │
-                                           ▼
-                                 ProductoMockService (RxJS of() / In-Memory Mock)
-```
+El modelado integral de la arquitectura frontend (Componentes Standalone, Angular Signals, Reactive Forms y Enrutamiento modular con Servicio Mock RxJS) se encuentra diseñado en el archivo nativo editable de **Draw.io**:
+* 📄 **Diagrama Draw.io:** [`diagramas/arquitectura-lab09a.drawio`](diagramas/arquitectura-lab09a.drawio)
+*(Compatible con la extensión oficial de VS Code "Draw.io Integration" o mediante [app.diagrams.net](https://app.diagrams.net)).*
 
 ---
 
