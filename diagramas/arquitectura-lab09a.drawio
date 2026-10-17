@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2026-10-17T20:54:00.000Z" agent="Antigravity" version="24.0.0" type="device">
+  <diagram id="lab09a-arch" name="Arquitectura Lab 09A">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="browser" value="Navegador Web&#xa;(SPA en puerto 4200)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="router" value="Angular Router&#xa;(app.routes.ts)&#xa;/productos&#xa;/productos/nuevo&#xa;/productos/editar/:id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="130" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="catalogo" value="CatalogoComponent&#xa;(Signals + Standalone)&#xa;Listado y Acciones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="form" value="ProductoFormComponent&#xa;(FormBuilder Reactivo)&#xa;Validaciones de Negocio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mock" value="ProductoMockService&#xa;(Observable &lt;Producto[]&gt; of())&#xa;Simulación en Memoria" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="760" y="135" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="browser" target="router">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="router" target="catalogo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="router" target="form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="catalogo" target="mock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="form" target="mock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

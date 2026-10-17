@@ -1,0 +1,49 @@
+<div class="catalogo-wrapper">
+  <div class="catalogo-header">
+    <div>
+      <h2>Catálogo de productos (Datos Mock)</h2>
+      <p class="subtitle">Gestión de inventario simulada mediante ProductoMockService y Signals</p>
+    </div>
+    <button type="button" routerLink="/productos/nuevo" class="btn-create">
+      + Nuevo producto
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (p of productos(); track p.id) {
+          <tr>
+            <td><strong>#{{ p.id }}</strong></td>
+            <td>{{ p.nombre }}</td>
+            <td>S/ {{ p.precio | number:'1.2-2' }}</td>
+            <td>{{ p.stock }}</td>
+            <td>
+              <span class="stock-badge" [class.badge-low]="p.stock < 5" [class.badge-ok]="p.stock >= 5">
+                {{ p.estadoStock || (p.stock < 5 ? 'BAJO' : 'DISPONIBLE') }}
+              </span>
+            </td>
+            <td class="action-buttons">
+              <button class="btn-edit" [routerLink]="['/productos/editar', p.id]">Editar</button>
+              <button class="btn-delete" (click)="eliminar(p.id)">Eliminar</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="6" class="empty-state">No hay productos en el inventario mock.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
